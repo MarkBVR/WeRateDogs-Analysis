@@ -11,7 +11,24 @@ retweets and favorites on twitter.
 
 ## Dataset Overview
 
+To begin this project I was supplied with a dataset with the tweet IDs for around 2300 archived tweets from the WeRateDogs Twitter feed. I used this along with the tweepy API to query Twitter for and logged each tweet's JSON into a .txt file. I read the .txt file into a pandas dataframe. In addition to this, I also downloaded a dataset that consisted of image predictions for each of the archived tweets and joined it to the rest of the data. 
 
+## Data Cleaning
+
+#### Tidying
+- Create one column for dog stage instead of four separate ones.
+- Create dog rating proportion column to normalize dog ratings which often exceeded the 10/10 scale.
+- Convert the three columns that contain True or False for if the prediction is a dog to a boolean from a string.
+
+#### Quality
+- Capitalize Breed names and remove underscore between words in columns `p1, p2, and p3`
+- Replace words that are not names in `name` column with none.
+- Remove retweets.
+- Remove reply tweets.
+- Convert `retweet_count` and `favorite_count` to integers.
+- Create new column that lists which contains the name of teh most likely dog to be in the picture.
+- change `timestamp` to date from string.
+- Replace `None` with np.nan in the entire dataset.
 
 ## Explanation of Findings
 
